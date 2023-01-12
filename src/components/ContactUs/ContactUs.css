@@ -1,0 +1,35 @@
+iframe {
+  width: 550px;
+  height: 450px;
+}
+
+@media screen and (max-width: 1150px) {
+  .app__navbar-smallscreen {
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app__wrapper_img {
+    width: 300px !important;
+    height: 200px !important;
+  }  
+}
+
+@media screen and (max-width: 300px) {
+  .app__wrapper_img {
+    width: 100% !important;
+    height: 75vh !important;
+    overflow-x: hidden;
+  }  
+  
+  .app__Image-text p,
+  .app__Image-text h1 {
+    display: none;
+  }
+
+  .app__navbar-smallscreen {
+    margin-right: 1rem;
+  }
+}
+/* iframe, object, embed{max-width: 100%; max-height: 100%;} */

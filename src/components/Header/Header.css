@@ -1,0 +1,113 @@
+.app__header {
+  background-color: var(--color-black);
+}
+
+.app__header-h1 {
+  font-family: var(--font-base);
+  color: var(--color-golden);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 117px;
+  font-size: 90px;
+}
+
+.app__above-image-text_smallscreen {
+  display: none;
+}
+
+.app__header-img img {
+  width: 80%;
+}
+
+/* Image css */
+.app__image {
+  background: var(--color-black);
+}
+
+.app__image-container {
+  height: 80vh;
+  position: relative;
+}
+
+.app__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app__Image-text p {
+  font-size: 32px;
+}
+
+.app__Image-text {
+  position: absolute;
+  z-index: 1;
+  top: 10rem;
+  left: 3rem;
+}
+
+/* /Image css end */
+
+@media screen and (min-width: 2000px) {
+  .app__header-h1 {
+      font-size: 180px;
+      line-height: 210px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .app__header-h1 {
+      font-size: 90px;
+  }
+
+  .app__image {
+    width: 100%;
+    height: 60%;
+  }
+  
+  .app__image img {
+    /* right: 0; */
+    object-position: 90% ;
+  }
+
+  .app__Image-text {
+    position: absolute;
+    z-index: 1;
+    top: 5rem;
+    left: 3rem;
+  }
+  
+}
+
+@media screen and (max-width: 650px) {
+  .app__header-h1 {
+      font-size: 70px;
+      line-height: 87px;
+  }
+  .app__image-text h1 {
+    font-size: 20px !important; 
+  }
+  .app__image-text p {
+    font-size: 10px;
+  }
+  .app__Image-text {
+    display: none;
+  }
+  .app__above-image-text_smallscreen {
+    display: grid;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .app__header-h1 {
+      font-size: 50px;
+      line-height: 70px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  /* .app__header { */
+    /* background-color: var(--color-white); */
+  /* } */
+
+}
