@@ -10,6 +10,10 @@ namespace Demo_API.Data
             : base(options)
         {
         }
+        public DbSet<Address> Addresses => Set<Address>();
+        public DbSet<Pet> Pets => Set<Pet>();
+        public DbSet<Appointment> Appointments => Set<Appointment>();
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

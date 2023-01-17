@@ -62,6 +62,7 @@ namespace Demo_API.Controllers
                 user.RefreshTokenExpiryTime = DateTime.Now.AddDays(refreshTokenValidityInDays);
 
                 await _userManager.UpdateAsync(user);
+                var roles = await _userManager.GetRolesAsync(user);
 
                 return Ok( new
                 {
@@ -75,7 +76,8 @@ namespace Demo_API.Controllers
                         UserName = user.UserName,
                         EmailConfirmed = user.EmailConfirmed,
                         PhoneNumber = user.PhoneNumber,
-                        PhoneNumberConfirmder = user.PhoneNumberConfirmed
+                        PhoneNumberConfirmder = user.PhoneNumberConfirmed,
+                        Roles = roles
                     },
 
                 });
@@ -116,7 +118,7 @@ namespace Demo_API.Controllers
         [Route("register-admin")]
         [Authorize(Roles = UserRoles.Admin)]
         public async Task<IActionResult> RegisterAdmin([FromBody] Register model) {
-            if ( model.Username is null || model.Password is null ) return BadRequest("No username/password were provided. Please enter a username/password");
+            if ( model.Username is null || model.Password is null ) return BadRequest("No username/password were provided. Please enter a username/password");
 
             var userExists = await _userManager.FindByNameAsync(model.Username);
             if (userExists != null)

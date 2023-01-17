@@ -1,15 +1,13 @@
 using Demo_API.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace Demo_API.Data;
 
 
-public class DummyData {
-  public static async Task Initialize(IServiceProvider serviceProvider, IConfigurationSection Admin) {
+public class DummyData 
+{
+  public static async Task Initialize(IServiceProvider serviceProvider, IConfigurationSection Admin) 
+  {
     var userManager = serviceProvider.GetService<UserManager<ApplicationUser>>();
     var roleManager = serviceProvider.GetService<RoleManager<IdentityRole>>();
     
@@ -32,15 +30,21 @@ public class DummyData {
     };
     
     var userRes = await userManager.CreateAsync(user, password);
-      Console.WriteLine(userRes);
-      
+     
     if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
       await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
     if (!await roleManager.RoleExistsAsync(UserRoles.User))
       await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+    
     if (await roleManager.RoleExistsAsync(UserRoles.Admin)) 
       await userManager.AddToRoleAsync(user, UserRoles.Admin);
-    if (await roleManager.RoleExistsAsync(UserRoles.User)) 
+      if (await roleManager.RoleExistsAsync(UserRoles.User)) 
       await userManager.AddToRoleAsync(user, UserRoles.User);
+   
+    }
+
+    public static void Seed ()
+    {
+
     }
 }
