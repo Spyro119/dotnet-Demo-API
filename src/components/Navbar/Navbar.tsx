@@ -2,11 +2,13 @@ import React, {useEffect, useState} from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
 
+
 import LogoSVG from '../LogoSVG/LogoSVG';
 
 import './Navbar.css';
 
 const Navbar = () => {
+
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   const [hamburgerMenuColor, setHamburgerMenuColor] = useState<string>("#000");
 
@@ -36,9 +38,9 @@ const Navbar = () => {
         <p className="p__opensans"> Sj Animal Care</p>
       </div>
         <ul className="app__navbar-links">
-        <li className="p__opensans"><a href="#home">Home</a></li>
-        <li className="p__opensans"><a href="#about">About</a></li>
-        <li className="p__opensans"><a href="#contact">Contact</a></li>
+        <li className="p__opensans"><a href="/">Home</a></li>
+        <li className="p__opensans"><a href="/#about">About</a></li>
+        <li className="p__opensans"><a href="/#contact">Contact</a></li>
       </ul>
       <div className="app__navbar-login">
         {/* <a href="#login" className="p__opensans">Log in / Register</a> */}
@@ -57,7 +59,7 @@ const Navbar = () => {
             fontSize={27}
             onClick={() => setToggleMenu(false)}/>
           <ul className="app__navbar-smallscreen_links">
-            <li className="p__opensans"><a href="#home">Home</a></li>
+            <li className="p__opensans"><a href="/">Home</a></li>
             <li className="p__opensans"><a href="#about">About</a></li>
             <li className="p__opensans"><a href="#contact">Contact</a></li>
             {/* <li className="p__opensans"><a href="#book-appointment">Schedule appointment</a></li> */}

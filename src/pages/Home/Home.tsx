@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Home.css';
 
-import { AboutUs, Header, ContactUs, BookAppointment } from '../../components';
+import { AboutUs, Header, ContactUs, BookAppointment } from './components'
 
 const Home = () => {
   return (

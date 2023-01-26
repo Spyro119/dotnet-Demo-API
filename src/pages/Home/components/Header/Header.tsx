@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { images } from '../../constants';
+import { images } from '../../../../constants';
 
 import './Header.css';
 
@@ -17,6 +17,7 @@ const Header = () => (
         </div>
         <div className="app__image-container">
           <img
+          alt="Image 1"
           src={images.healthyDog}/>
         </div>
       </div>

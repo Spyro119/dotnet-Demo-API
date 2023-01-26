@@ -1,0 +1,39 @@
+.app__register-form {
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+}
+.app_register {
+  background: var(--color-grey);
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.app__register-form input {
+  margin: 1em;
+  border-radius: 5px;
+  height: 2em;
+  width: 300px;
+  font-family: var(--font-base);
+  outline: none;
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+}
+
+label#icon {
+  margin: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+#icon {
+  display: inline-block;
+  padding: 9.3px 15px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  background: #1c87c9;
+  color: #fff;
+  text-align: center;
+}
+
+.round-btn {
+  border-radius: 10px !important;
+}
